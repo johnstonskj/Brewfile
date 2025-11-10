@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+brew install rcmdnk/file/brew-file
+
+if [[ ! -d "~/.config/brewfile/Brewfile"]]; then
+    ln ./Brewfile ~/.config/brewfile/Brewfile
+fi
+
+if [[ ! grep brew-wrap ~/.zshrc ]]; then
+cat << EOF
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+EOF >> ~/.zshrc
+fi
