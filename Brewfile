@@ -2,17 +2,6 @@
 ## Layer 00 => Bootstrap
 ## ====================================================================================================================
 
-# Tap homebrew itself
-tap 'homebrew/cask'
-tap 'homebrew/cask-drivers'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/core'
-tap 'homebrew/boneyard'
-tap 'homebrew/dev-tools'
-tap 'homebrew/bundle'
-tap 'homebrew/services'
-
 tap  'rcmdnk/file'
 brew 'brew-file'
 
@@ -35,7 +24,7 @@ brew 'zsh'
 brew 'zsh-syntax-highlighting'
 
 # Another really helpful zsh plugin.
-brew 'zsh-autosuggestion'
+brew 'zsh-autosuggestions'
 
 # Cross-shell prompt
 brew 'starship'
@@ -74,12 +63,6 @@ brew 'nano'
 # Automake is a tool for automatically generating Makefile installation files.
 brew 'automake'
 
-# GNU Privacy Guard (GnuPG) provides encryption as a free replacement for PGP.
-brew 'gpg'
-
-# GNU Privacy Guard (GnuPG) PIN entry for macOS to do GPG terminal decryption
-brew 'pinentry-mac'
-
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 01 ❱ Basic Shell Environment ❱ Better Utilities
 # ---------------------------------------------------------------------------------------------------------------------
@@ -99,15 +82,6 @@ brew 'wget'
 # Zstandard is the best modern compression
 brew 'zstd'
 
-# bcrypt is high quality encryption that is very popular
-brew 'bcrypt'
-
-# scrypt is high quality encryption
-brew 'scrypt'
-
-# Pass, a Unix password manager for the command line
-brew 'pass'
-
 # rsync is the classic unix file synchronizer.
 brew 'rsync'
 
@@ -116,9 +90,6 @@ brew 'unison'
 
 # ripgrep is text search; we prefer it over grep, ag, git grep, ucg, pt, sift.
 brew 'ripgrep'
-
-# OpenSSL is an open-source implementation of the SSL and TLS protocols.
-brew 'openssl'
 
 # fd: a simple, fast and user-friendly alternative to find.
 brew 'fd'
@@ -154,15 +125,45 @@ brew 'gnuplot'
 brew 'vtk'
 
 # ---------------------------------------------------------------------------------------------------------------------
+# Layer 01 ❱ Basic Shell Environment ❱ Security-Related
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Pass, a Unix password manager for the command line
+brew 'pass'
+
+# bcrypt is high quality encryption that is very popular
+brew 'bcrypt'
+
+# scrypt is high quality encryption
+brew 'scrypt'
+
+# OpenSSL is an open-source implementation of the SSL and TLS protocols.
+brew 'openssl'
+
+# GNU Privacy Guard (GnuPG) provides encryption as a free replacement for PGP.
+brew 'gpg'
+
+# GNU Privacy Guard (GnuPG) PIN entry for macOS to do GPG terminal decryption
+brew 'pinentry-mac'
+
+brew 'gpg-tui'
+
+cask 'gpgfrontend'
+
+# ---------------------------------------------------------------------------------------------------------------------
 # Layer 01 ❱ Basic Shell Environment ❱ Editors
 # ---------------------------------------------------------------------------------------------------------------------
 
-# MacVIM editor
-cask 'macvim'
-cask 'neovim'
+# GUI for vim, made for macOS
+cask 'macvim-app'
+
+# Ambitious Vim-fork focused on extensibility and agility
+brew 'neovim'
+
+tap 'd12frosted/emacs-plus'
 
 # Emacs editor with extra features; recommended by Spacemacs and Doom emacs
-brew 'emacs-plus'
+brew 'emacs-plus@29', args: ['with-native-comp', 'with-imagemagick', 'with-dbus', 'with-ctags']
 
 # MacDown simple markdown editor
 cask 'macdown'
@@ -181,7 +182,7 @@ brew 'aspell'
 ## ====================================================================================================================
 
 # Application launcher and productivity software
-cask 'alfred'
+cask 'alfred', adopt: true
 
 # Cable-free audio router
 cask 'loopback'
@@ -193,14 +194,18 @@ cask 'soundsource'
 cask 'popclip'
 
 # The Launchpad Replacement macOS 26 Deserves
-cask 'launchie'
+mas 'Launchie App Launcher', id: 6752657468
 
+# Google Drive client for Mac
+cask 'google-drive'
+
+# 1Password password manager
+cask '1password', adopt: true
 # Multi-cloud backup application
 cask 'arq'
 
 # Mac OS Quick-Look Plugins
 cask 'qlcolorcode'    # QL for code with highlighting
-cask 'qlimagesize'    # QL for size info for images
 cask 'qlmarkdown'     # QL for markdown files
 cask 'qlprettypatch'  # QL for patch / diff files
 cask 'qlstephen'      # QL for dev text files
@@ -213,14 +218,14 @@ cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
 # Layer 02 => System Integration ❱ Fonts
 # ---------------------------------------------------------------------------------------------------------------------
 
-brew 'font-fira-code'
-brew 'font-fira-code-nerd-font'
-brew 'font-fira-mono'
-brew 'font-fira-mono-nerd-font'
-brew 'font-fira-mono-for-powerline'
-brew 'font-fira-sans'
-brew 'font-fira-sans-condensed'
-brew 'font-fira-sans-extra-condensed'
+cask 'font-fira-code'
+cask 'font-fira-code-nerd-font'
+cask 'font-fira-mono'
+cask 'font-fira-mono-nerd-font'
+cask 'font-fira-mono-for-powerline'
+cask 'font-fira-sans'
+cask 'font-fira-sans-condensed'
+cask 'font-fira-sans-extra-condensed'
 cask 'font-hack'
 cask 'font-inconsolata'
 cask 'font-meslo-lg-nerd-font'
@@ -241,7 +246,7 @@ cask 'slack'
 cask 'microsoft-office'
 
 # Anthropic's official Claude AI desktop app
-cask 'claude'
+cask 'claude', adopt: true
 
 ## ====================================================================================================================
 ## Layer 04 => Development Tools
@@ -306,7 +311,7 @@ cask 'xquartz'
 brew 'gcc'
 
 # LLVM compiler
-brew 'llvm', args: ['with-toolchain']
+brew 'llvm'
 
 # GNU CLISP, a Common Lisp implementation
 brew 'clisp'
@@ -342,7 +347,7 @@ brew 'ruby'
 brew 'rustup'
 
 # Modern programming language in the Lisp/Scheme family
-cask "racket"
+cask 'racket'
 
 # A variety of scheme implementations
 brew 'chezscheme'
@@ -370,20 +375,17 @@ cask 'visual-studio-code'
 # Xcode, full installation
 mas 'Xcode', id: 497799835
 
-# Alcatraz Xcode plugin manager
-cask 'alcatraz'
-
 # Carthage Xcode project dependency manager.
 brew 'carthage'
 
 # Terminal-based AI coding assistant
-cask "claude-code"
-cask "claude-cmd"
-cask "claude-hooks"
-cask "claudekit"
+cask 'claude-code'
+brew 'claude-cmd'
+brew 'claude-hooks'
+brew 'claudekit'
 
 # Finder extension to use Git
-# mas 'SnailGit – Git for Finder', id: 847260112
+mas 'SnailGit – Git for Finder', id: 847260112
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 04 => Development Tools ❱ Runtime
@@ -412,7 +414,7 @@ mas 'DiveLogDT', id: 411603212
 mas 'MathStudio', id: 829912893
 
 # Proton suite of privacy-focused apps
-# brew 'proton-drive'
-# brew 'proton-mail'
-# brew 'proton-pass'
-# brew 'protonvpn'
+cask 'proton-drive', adopt: true
+cask 'proton-mail', adopt: true
+cask 'proton-pass', adopt: true
+cask 'protonvpn', adopt: true
