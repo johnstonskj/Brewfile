@@ -26,11 +26,20 @@ brew 'zsh-syntax-highlighting'
 # Another really helpful zsh plugin.
 brew 'zsh-autosuggestions'
 
+# For better argument parsing in shell scripts
+brew 'gnu-getopt'
+
 # Cross-shell prompt
 brew 'starship'
 
 # GPU-based terminal emulator
 cask 'kitty'
+
+# Terminal multiplexer
+brew 'tmux'
+
+# Manage complex tmux sessions easily
+brew 'tmuxinator'
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 01 ❱ Basic Shell Environment ❱ GNU Utilities
@@ -181,6 +190,9 @@ brew 'aspell'
 ## Layer 02 => System Integration
 ## ====================================================================================================================
 
+# A better console tool
+brew 'console'
+
 # Application launcher and productivity software
 cask 'alfred', adopt: true
 
@@ -228,7 +240,9 @@ cask 'font-fira-sans-condensed'
 cask 'font-fira-sans-extra-condensed'
 cask 'font-hack'
 cask 'font-inconsolata'
+cask 'font-meslo-lg'
 cask 'font-meslo-lg-nerd-font'
+cask 'font-linux-libertine'
 
 ## ====================================================================================================================
 ## Layer 03 => General-Purpose Productivity
@@ -244,6 +258,9 @@ cask 'slack'
 
 # Microsof Office is a large suite of software for documents, spreadsheets, diagrams.
 cask 'microsoft-office'
+
+# Damn fine LaTeX editor
+cask 'texifier'
 
 # Anthropic's official Claude AI desktop app
 cask 'claude', adopt: true
@@ -303,6 +320,14 @@ cask 'xquartz'
 # Layer 04 => Development Tools ❱ Libraries & Frameworks
 # ---------------------------------------------------------------------------------------------------------------------
 
+# No longer used; kept for reference
+
+# Settings repository URL: https://github.com/johnstonskj/idea-settings.git
+# cask 'intellij-idea-ce'
+
+# cask 'sublime-text'
+# cask 'sublime-merge'
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 04 => Development Tools ❱ Programming Languages
 # ---------------------------------------------------------------------------------------------------------------------
@@ -315,6 +340,10 @@ brew 'llvm'
 
 # GNU CLISP, a Common Lisp implementation
 brew 'clisp'
+
+# Coq proof assistant for higher-order logic
+brew 'coq'
+cask 'coq-ide'
 
 # GNU Ubiquitous Intelligent Language for Extensions
 brew 'guile'
@@ -346,6 +375,22 @@ brew 'ruby'
 # Rust!!!!
 brew 'rustup'
 
+# LSP server for Rust
+brew 'rust-analyzer'
+
+# Cargo commands
+brew 'cargo-audit'
+brew 'cargo-binstall'
+brew 'cargo-dependencydepgraph'
+brew 'cargo-desktopedit'
+brew 'cargo-flamegraph'
+brew 'cargo-expand'
+brew 'cargo-generate'
+brew 'cargo-nexttest'
+brew 'cargo-shear'
+brew 'cargo-update'
+brew 'cargo-watch'
+
 # Modern programming language in the Lisp/Scheme family
 cask 'racket'
 
@@ -359,7 +404,10 @@ brew 'chezscheme'
 # brew 'scheme48'
 # brew 'sisc-scheme'
 
-# Tool to help with Swift style and conventions.
+# High-performance system programming language.
+brew 'swift'
+brew 'swiftly'
+brew 'swift-format'
 brew 'swiftlint'
 
 # YAML lint validator
@@ -387,9 +435,18 @@ brew 'claudekit'
 # Finder extension to use Git
 mas 'SnailGit – Git for Finder', id: 847260112
 
+cask 'jupyter-notebook-ql'
+cask 'jupyter-notebook-viewer'
+cask 'jupyterlab-app'
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 04 => Development Tools ❱ Runtime
 # ---------------------------------------------------------------------------------------------------------------------
+
+brew 'awscli'
+brew 'awscli-local'
+brew 'aws-cdk'
+brew 'aws-keychain'
 
 # SQLite database: self-contained, serverless, zero-configuration, transactional engine.
 brew 'sqlite', link: true
@@ -418,3 +475,10 @@ cask 'proton-drive', adopt: true
 cask 'proton-mail', adopt: true
 cask 'proton-pass', adopt: true
 cask 'protonvpn', adopt: true
+
+# Music/Midi
+cask 'midikeys'
+
+cask 'bitwig-studio'
+
+cask 'native-access'
