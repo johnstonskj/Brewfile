@@ -47,7 +47,6 @@ brew 'tmuxinator'
 
 # Basic file, shell and text manipulation utilities of the GNU operating system.
 brew 'coreutils'
-
 brew 'binutils'
 brew 'diffutils'
 brew 'ed'
@@ -63,13 +62,11 @@ brew 'inetutils'
 brew 'watch'
 brew 'wdiff'
 
+# Core GNU programming tools
 brew 'gdb'  # gdb requires further actions to make it work. See `brew info gdb`.
 brew 'gpatch'
 brew 'm4'
-brew 'make'
-brew 'nano'
-
-# Automake is a tool for automatically generating Makefile installation files.
+brew 'make' # GNU make
 brew 'automake'
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -151,17 +148,15 @@ brew 'openssl'
 
 # GNU Privacy Guard (GnuPG) provides encryption as a free replacement for PGP.
 brew 'gpg'
-
-# GNU Privacy Guard (GnuPG) PIN entry for macOS to do GPG terminal decryption
 brew 'pinentry-mac'
-
 brew 'gpg-tui'
-
 cask 'gpgfrontend'
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 01 ❱ Basic Shell Environment ❱ Editors
 # ---------------------------------------------------------------------------------------------------------------------
+
+brew 'nano'
 
 # GUI for vim, made for macOS
 cask 'macvim-app'
@@ -211,8 +206,6 @@ mas 'Launchie App Launcher', id: 6752657468
 # Google Drive client for Mac
 cask 'google-drive'
 
-# 1Password password manager
-cask '1password', adopt: true
 # Multi-cloud backup application
 cask 'arq'
 
@@ -292,6 +285,7 @@ cask 'claude', adopt: true
 # Finder/Menubar extensions
 mas 'Meeting Reminder In Your Face', id: 1476964367
 mas 'Plock • Pop-up Clock', id: 1642528649
+mas 'FileUtils', id: 6477607708
 
 # Utilities
 mas 'Cicero: A Unicode® Tool', id: 1480977453
@@ -301,16 +295,33 @@ mas 'Ultra Character Map', id: 520265986
 ## Layer 04 => Development Tools
 ## ====================================================================================================================
 
+brew 'cmake' # Cross-platform make
+brew 'cmake-lint'
+brew 'just'
+brew 'diff-so-fancy'
+brew 'difftastic'
+
 # Git is a free and open source distributed version control system.
 brew 'git'
-brew 'git-lfs'
-brew 'git-extras'
 brew 'git-crypt'
+brew 'git-delta' # set as pager
+brew 'git-extras'
+brew 'git-lfs'
+brew 'git-machete'
+brew 'git-standup'
+brew 'multi-git-status'
+
+brew 'gitlint'
+brew 'gitwatch'
+brew 'fswatch'
+
 brew 'tig'
 cask 'gitkraken-cli'
+cask 'gitfinder'
 
 # Github command-line interface
 brew 'gh'
+brew 'github-mcp-server'
 
 # Load/unload environment variables based on $PWD
 brew 'direnv'
@@ -349,6 +360,8 @@ cask 'xquartz'
 
 # cask 'sublime-text'
 # cask 'sublime-merge'
+
+# text wrangler
 
 # mas 'Tap Forms Organizer 5 Database', id: 1081981112
 # mas 'Tap Forms Database Pro', id: 1527890083
@@ -418,6 +431,9 @@ brew 'cargo-watch'
 # Modern programming language in the Lisp/Scheme family
 cask 'racket'
 
+# Another Mac-specific Scheme
+mas 'LispPad', id: 1258939760
+
 # A variety of scheme implementations
 brew 'chezscheme'
 # brew 'chibi-scheme'
@@ -427,6 +443,8 @@ brew 'chezscheme'
 # brew 'sagittarius-scheme'
 # brew 'scheme48'
 # brew 'sisc-scheme'
+
+# brew 'gnu-smalltalk'
 
 # High-performance system programming language.
 brew 'swift'
@@ -501,6 +519,10 @@ mas 'Copilot: Track & Budget Money', id: 1447330651
 cask 'midikeys'
 cask 'bitwig-studio'
 cask 'native-access'
+cask 'arturia-software-center'
+
+# cask 'supercollider'
+# cask 'cycling74-max'
 
 mas 'GarageBand', id: 682658836
 
