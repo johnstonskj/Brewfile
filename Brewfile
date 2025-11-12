@@ -318,6 +318,7 @@ brew 'fswatch'
 brew 'tig'
 cask 'gitkraken-cli'
 cask 'gitfinder'
+cask 'gitbutler'
 
 # Github command-line interface
 brew 'gh'
@@ -464,6 +465,7 @@ cask 'visual-studio-code'
 
 # Xcode, full installation
 mas 'Xcode', id: 497799835
+cask 'github-copilot-for-xcode'
 
 # Carthage Xcode project dependency manager.
 brew 'carthage'
