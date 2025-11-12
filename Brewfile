@@ -191,7 +191,7 @@ brew 'aspell'
 ## ====================================================================================================================
 
 # A better console tool
-brew 'console'
+cask 'console'
 
 # Application launcher and productivity software
 cask 'alfred', adopt: true
@@ -248,22 +248,54 @@ cask 'font-linux-libertine'
 ## Layer 03 => General-Purpose Productivity
 ## ====================================================================================================================
 
+# Browser & Social
+cask 'google-chrome'
+# cask 'firefox'
+# cask 'brave-browser'
+
+# Communication clients
+cask 'slack', adopt: true
+cask 'zoom', adopt: true
+cask 'signal'
+cask 'messenger'
+cask 'whatsapp'
+
+# Client to install Adobe apps
 cask 'adobe-creative-cloud'
 
-# Google Chrome web browser
-cask 'google-chrome'
-
-# Slack chat client
-cask 'slack'
+mas 'PDF Expert – Edit, Sign PDFs', id: 1055273043
 
 # Microsof Office is a large suite of software for documents, spreadsheets, diagrams.
 cask 'microsoft-office'
 
+# Proton suite of privacy-focused apps
+cask 'proton-drive', adopt: true
+cask 'proton-mail', adopt: true
+cask 'proton-pass', adopt: true
+cask 'protonvpn', adopt: true
+cask 'standard-notes', adopt: true
+
+mas 'Proton Pass for Safari', id: 6502835663
+
 # Damn fine LaTeX editor
 cask 'texifier'
 
+# Diagramming
+cask 'omnigraffle', adopt: true
+
+# Simple CAS for Mac
+mas 'MathStudio', id: 829912893
+
 # Anthropic's official Claude AI desktop app
 cask 'claude', adopt: true
+
+# Finder/Menubar extensions
+mas 'Meeting Reminder In Your Face', id: 1476964367
+mas 'Plock • Pop-up Clock', id: 1642528649
+
+# Utilities
+mas 'Cicero: A Unicode® Tool', id: 1480977453
+mas 'Ultra Character Map', id: 520265986
 
 ## ====================================================================================================================
 ## Layer 04 => Development Tools
@@ -271,18 +303,11 @@ cask 'claude', adopt: true
 
 # Git is a free and open source distributed version control system.
 brew 'git'
-
-# Git Large File Storage
 brew 'git-lfs'
-
-# Small git utilities
 brew 'git-extras'
-
-# Transparent encryption for git repos
 brew 'git-crypt'
-
-# Text-mode interface for git repositories
 brew 'tig'
+cask 'gitkraken-cli'
 
 # Github command-line interface
 brew 'gh'
@@ -294,9 +319,6 @@ brew 'plantuml'
 
 # Shell script syntax check linter
 brew 'shellcheck'
-
-# CLI for GitKraken
-cask 'gitkraken-cli'
 
 # Source code line counter
 brew 'tokei'
@@ -328,6 +350,9 @@ cask 'xquartz'
 # cask 'sublime-text'
 # cask 'sublime-merge'
 
+# mas 'Tap Forms Organizer 5 Database', id: 1081981112
+# mas 'Tap Forms Database Pro', id: 1527890083
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 04 => Development Tools ❱ Programming Languages
 # ---------------------------------------------------------------------------------------------------------------------
@@ -342,8 +367,8 @@ brew 'llvm'
 brew 'clisp'
 
 # Coq proof assistant for higher-order logic
-brew 'coq'
-cask 'coq-ide'
+brew 'rocq'
+brew 'rocq-elpi'
 
 # GNU Ubiquitous Intelligent Language for Extensions
 brew 'guile'
@@ -352,12 +377,10 @@ brew 'guile-gnutls'
 
 # Node.js is a JavaScript platform for building fast, scalable network app.
 brew 'node'
+brew 'nvm'
 
 # V8 JavaScript Engine.
 brew 'v8'
-
-# Switching node versions
-brew 'nvm'
 
 # OCaml: General purpose programming language in the ML family
 brew 'ocaml'
@@ -368,6 +391,7 @@ brew 'opam'
 
 # Python programming language, esp. for systems scripting.
 brew 'python3'
+brew 'uv'
 
 # Ruby programming language; compare `perl`, `python`.
 brew 'ruby'
@@ -381,12 +405,12 @@ brew 'rust-analyzer'
 # Cargo commands
 brew 'cargo-audit'
 brew 'cargo-binstall'
-brew 'cargo-dependencydepgraph'
-brew 'cargo-desktopedit'
+brew 'cargo-depgraph'
+brew 'cargo-edit'
 brew 'cargo-flamegraph'
 brew 'cargo-expand'
 brew 'cargo-generate'
-brew 'cargo-nexttest'
+brew 'cargo-nextest'
 brew 'cargo-shear'
 brew 'cargo-update'
 brew 'cargo-watch'
@@ -439,6 +463,18 @@ cask 'jupyter-notebook-ql'
 cask 'jupyter-notebook-viewer'
 cask 'jupyterlab-app'
 
+# Swift Development Tools from the Mac App Store
+mas 'Swift Playground', id: 1496833156
+mas 'Swifter for SwiftUI', id: 1621133381
+mas 'DetailsPro', id: 1524366536
+
+# Make iOS and macOS widgets in JavaScript
+mas 'ScriptWidget', id: 1555600758
+
+mas 'SQLPro Studio', id: 985614903
+
+mas 'Ninox Database', id: 901110441
+
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 04 => Development Tools ❱ Runtime
 # ---------------------------------------------------------------------------------------------------------------------
@@ -451,34 +487,56 @@ brew 'aws-keychain'
 # SQLite database: self-contained, serverless, zero-configuration, transactional engine.
 brew 'sqlite', link: true
 
-# ZeroMQ message queue
-# brew 'zeromq'
+# High-performance, asynchronous messaging library
+brew 'zeromq'
 
 ## ====================================================================================================================
 ## Layer 05 => Personal Apps
 ## ====================================================================================================================
 
-# Diagramming
-cask 'omnigraffle'
-
 # Track money & budgets
 mas 'Copilot: Track & Budget Money', id: 1447330651
+
+# Music Creation and MIDI Tools
+cask 'midikeys'
+cask 'bitwig-studio'
+cask 'native-access'
+
+mas 'GarageBand', id: 682658836
+
+mas 'Audulus 4', id: 1592022030
+mas 'Animoog Z Synthesizer', id: 1586841361
+mas 'Minimoog Model D Synthesizer', id: 1339418001
+mas 'Model 15 Modular Synthesizer', id: 1041465860
+
+mas 'MIDI Connect', id: 6476070288
+mas 'QuickMIDI', id: 1459790045
+mas 'Widi Plus', id: 1115231926
+
+# MUsic Listening
+mas 'Endel: Focus & Sleep Sounds', id: 1346247457
+mas 'Silicio Mini Player + Widgets', id: 933627574
+
+# mas 'Linn', id: 1292218680 <= iPad app
+mas 'Linn Kazoo', id: 848937349
 
 # The best dive logger
 mas 'DiveLogDT', id: 411603212
 
-# Simple CAS for Mac
-mas 'MathStudio', id: 829912893
+# Widgets
+mas 'Lockera Widgets', id: 6466819847
+mas 'iStatistica Pro', id: 1447778660
 
-# Proton suite of privacy-focused apps
-cask 'proton-drive', adopt: true
-cask 'proton-mail', adopt: true
-cask 'proton-pass', adopt: true
-cask 'protonvpn', adopt: true
+# Finder/Menubar extensions
+mas 'New Terminal Here', id: 1067646949
+mas 'Webcam Settings', id: 533696630
+# mas 'QR Clipboard', id: 869183896 <= maybe?
 
-# Music/Midi
-cask 'midikeys'
+# Amateur Radio
+mas 'Morse: Code training to CW guru', id: 923315129
+mas 'QTH.app', id: 6740310746
+mas 'SDR Control for Icom', id: 1592313285
+mas 'RUMlogNG', id: 964454561
 
-cask 'bitwig-studio'
-
-cask 'native-access'
+# General Odds and Ends
+# mas 'Parcel - Delivery Tracking', id: 375589283
