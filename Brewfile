@@ -109,9 +109,6 @@ brew 'jq'
 # yq is a lightweight and flexible command-line YAML processor.
 brew 'yq'
 
-# xsv is for CSV file parsing, and is fast, full featured, and flexible.
-brew 'xsv'
-
 # Tad is CSV viewer with features for pivot, search, etc.
 cask 'tad'
 
@@ -167,7 +164,7 @@ brew 'neovim'
 tap 'd12frosted/emacs-plus'
 
 # Emacs editor with extra features; recommended by Spacemacs and Doom emacs
-brew 'emacs-plus@29', args: ['with-native-comp', 'with-imagemagick', 'with-dbus', 'with-ctags']
+brew 'emacs-plus@30'
 
 # MacDown simple markdown editor
 cask 'macdown'
@@ -208,16 +205,6 @@ cask 'google-drive'
 
 # Multi-cloud backup application
 cask 'arq'
-
-# Mac OS Quick-Look Plugins
-cask 'qlcolorcode'    # QL for code with highlighting
-cask 'qlmarkdown'     # QL for markdown files
-cask 'qlprettypatch'  # QL for patch / diff files
-cask 'qlstephen'      # QL for dev text files
-cask 'qlvideo'        # QL for video formats
-cask 'quicklook-csv'  # QL for tables in CSV format
-cask 'quicklook-json', args: { require_sha: false } # QL for JSON, with trees
-cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Layer 02 => System Integration ❱ Fonts
@@ -308,7 +295,6 @@ brew 'git-delta' # set as pager
 brew 'git-extras'
 brew 'git-lfs'
 brew 'git-machete'
-brew 'git-standup'
 brew 'multi-git-status'
 
 brew 'gitlint'
@@ -410,6 +396,8 @@ brew 'uv'
 # Ruby programming language; compare `perl`, `python`.
 brew 'ruby'
 
+# Also, https://rvm.io/rvm/install
+
 # Rust!!!!
 brew 'rustup'
 
@@ -427,7 +415,6 @@ brew 'cargo-generate'
 brew 'cargo-nextest'
 brew 'cargo-shear'
 brew 'cargo-update'
-brew 'cargo-watch'
 
 # Modern programming language in the Lisp/Scheme family
 cask 'racket'
@@ -463,6 +450,9 @@ brew 'yamllint'
 # Visual Studio Code editor
 cask 'visual-studio-code'
 
+# Kiro: agent-based IDE
+cask 'kiro', adopt: true
+
 # Xcode, full installation
 mas 'Xcode', id: 497799835
 cask 'github-copilot-for-xcode'
@@ -479,8 +469,6 @@ brew 'claudekit'
 # Finder extension to use Git
 mas 'SnailGit – Git for Finder', id: 847260112
 
-cask 'jupyter-notebook-ql'
-cask 'jupyter-notebook-viewer'
 cask 'jupyterlab-app'
 
 # Swift Development Tools from the Mac App Store
